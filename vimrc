@@ -37,6 +37,7 @@ endif
 
 set hlsearch
 set autoindent
+set laststatus=2
 
 " size of a hard tabstop
 set tabstop=4
