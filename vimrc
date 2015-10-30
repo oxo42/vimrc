@@ -38,6 +38,8 @@ endif
 set hlsearch
 set autoindent
 set laststatus=2
+set showtabline=2
+set guioptions=-e
 
 " size of a hard tabstop
 set tabstop=4
