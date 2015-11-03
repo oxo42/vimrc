@@ -20,7 +20,6 @@ Plugin 'PProvost/vim-ps1'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-set modeline
 
 if has('gui_running')
     set background=light
@@ -28,30 +27,31 @@ else
     set background=dark
 endif
 
-set hlsearch
-set autoindent
+
+" Looks
 set laststatus=2
 set showtabline=2
 set guioptions=-e
 colorscheme solarized
+syntax on
+set modeline
 
-" size of a hard tabstop
+" Behaviour
+set autoindent
 set tabstop=4
-
-" size of an "indent"
 set shiftwidth=4
-
-" a combination of spaces and tabs are used to simulate tab stops at a width
-" other than the (hard)tabstop
 set softtabstop=4
-
-" make "tab" insert indents instead of tabs at the beginning of a line
 set smarttab
-
-" always uses spaces instead of tab characters
 set expandtab
 
-syntax on
+" Search
+set hlsearch
+set ignorecase
+set incsearch
+
+" Mouse
+set mouse=a
+
 
 let g:vim_markdown_folding_disabled=1
 let g:ps1_nofold_blocks=1
