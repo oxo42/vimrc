@@ -9,17 +9,10 @@ call vundle#begin()
 " " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" https://github.com/tpope/vim-fugitive
 Plugin 'tpope/vim-fugitive'
-
-" https://github.com/altercation/vim-colors-solarized.git
 Plugin 'altercation/vim-colors-solarized'
-
-" vim-markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-
-" vim-splunk
 Plugin 'yorokobi/vim-splunk'
 Plugin 'PProvost/vim-ps1'
 
@@ -40,6 +33,7 @@ set autoindent
 set laststatus=2
 set showtabline=2
 set guioptions=-e
+colorscheme solarized
 
 " size of a hard tabstop
 set tabstop=4
