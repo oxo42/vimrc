@@ -20,6 +20,8 @@ Plugin 'PProvost/vim-ps1'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+let mapleader=","
+let maplocalleader="\\"
 
 if has('gui_running')
     set background=light
@@ -44,12 +46,14 @@ set copyindent          " copy the previous indentation on autoindenting
 set tabstop=4           " a tab is four spaces
 set softtabstop=4       " when hitting <BS>, pretend like a tab is removed, even if spaces
 set shiftwidth=4        " number of spaces to use for autoindenting
+set shiftround          " round the indent to shiftwidth
 set smarttab            " insert tabs on the start of a line according to shiftwidth, not tabstop
 set expandtab           " expand tabs by default
 set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
 set nolist              " don't show invisible characters by default
 set pastetoggle=<F2>    " when in insert mode, press <F2> to go to paste mode
                         " where mass data won't be auto indented
+set showmatch           " show matching paren when in insert mode
 
 " Search
 set hlsearch            " highlight search terms
@@ -62,15 +66,21 @@ set mouse=a             " enable mouse if term emulator allows it
 
 " Keyboard shortcuts {{{
 " For tabs :)
-map <C-t>h :tabprevious<cr>
-map <C-t>H :tabrewind<cr>
-map <C-t>l :tabnext<cr>
-map <C-t>L :tablast<cr>
+noremap <C-t>h :tabprevious<cr>
+noremap <C-t>H :tabrewind<cr>
+noremap <C-t>l :tabnext<cr>
+noremap <C-t>L :tablast<cr>
 
 " Speed up scrolling the viewporet
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
 
+" toggle line number
+nnoremap <leader>n :set number!<cr>
+
+" C-u will uppercase a word
+nnoremap <C-u> viwU
+inoremap <C-u> <Esc>viwUea
 " }}}
 
 " Vim behaviour {{{
