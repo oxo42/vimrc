@@ -30,7 +30,7 @@ endif
 
 " Looks
 set laststatus=2
-set showtabline=2
+set showtabline=1
 set guioptions=-e
 let g:solarized_termtrans = 1
 colorscheme solarized
@@ -53,6 +53,12 @@ set incsearch
 " Mouse
 set mouse=a
 
+" Keyboard shortcuts
+" For tabs :)
+map <C-t>h :tabprevious<cr>
+map <C-t>H :tabrewind<cr>
+map <C-t>l :tabnext<cr>
+map <C-t>L :tablast<cr>
 
 let g:vim_markdown_folding_disabled = 1
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
