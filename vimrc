@@ -49,7 +49,7 @@ set shiftwidth=4        " number of spaces to use for autoindenting
 set shiftround          " round the indent to shiftwidth
 set smarttab            " insert tabs on the start of a line according to shiftwidth, not tabstop
 set expandtab           " expand tabs by default
-set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
+" set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
 set nolist              " don't show invisible characters by default
 set pastetoggle=<F2>    " when in insert mode, press <F2> to go to paste mode
                         " where mass data won't be auto indented
