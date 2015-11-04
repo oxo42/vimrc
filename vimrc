@@ -54,4 +54,5 @@ set mouse=a
 
 
 let g:vim_markdown_folding_disabled=1
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 let g:ps1_nofold_blocks=1
