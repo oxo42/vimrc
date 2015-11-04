@@ -32,6 +32,7 @@ endif
 set laststatus=2
 set showtabline=2
 set guioptions=-e
+let g:solarized_termtrans = 1
 colorscheme solarized
 syntax on
 set modeline
@@ -53,6 +54,6 @@ set incsearch
 set mouse=a
 
 
-let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_folding_disabled = 1
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
-let g:ps1_nofold_blocks=1
+let g:ps1_nofold_blocks = 1
