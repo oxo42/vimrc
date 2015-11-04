@@ -81,6 +81,9 @@ nnoremap <leader>n :set number!<cr>
 " C-u will uppercase a word
 nnoremap <C-u> viwU
 inoremap <C-u> <Esc>viwUea
+
+" Grep in vim
+nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 " }}}
 
 " Vim behaviour {{{
