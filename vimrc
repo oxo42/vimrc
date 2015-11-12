@@ -35,7 +35,7 @@ set laststatus=2
 set showtabline=1
 set guioptions=-e
 let g:solarized_termtrans = 1
-colorscheme solarized
+" colorscheme solarized
 syntax on
 set modeline
 
