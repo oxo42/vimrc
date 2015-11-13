@@ -5,8 +5,8 @@ filetype off
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-"
-" " let Vundle manage Vundle, required
+
+" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
@@ -65,6 +65,9 @@ set mouse=a             " enable mouse if term emulator allows it
 " }}}
 
 " Keyboard shortcuts {{{
+" General
+nnoremap Y y$
+
 " For tabs :)
 noremap <C-t>h :tabprevious<cr>
 noremap <C-t>H :tabrewind<cr>
