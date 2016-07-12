@@ -25,3 +25,6 @@
 [submodule "bundle/vim-gradle"]
 	path = bundle/vim-gradle
 	url = https://github.com/tfnico/vim-gradle.git
+[submodule "bundle/vim-hack"]
+	path = bundle/vim-hack
+	url = https://github.com/hhvm/vim-hack.git
