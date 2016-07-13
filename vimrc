@@ -77,6 +77,12 @@ noremap <C-t>H :tabrewind<cr>
 noremap <C-t>l :tabnext<cr>
 noremap <C-t>L :tablast<cr>
 
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Speed up scrolling the viewporet
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
