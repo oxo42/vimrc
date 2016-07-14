@@ -10,7 +10,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
-Plugin 'altercation/vim-colors-solarized'
+" Plugin 'altercation/vim-colors-solarized'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'yorokobi/vim-splunk'
@@ -36,8 +36,8 @@ endif
 set laststatus=2
 set showtabline=1
 set guioptions=-e
-let g:solarized_termtrans = 1
-" colorscheme solarized
+"let g:solarized_termtrans = 1
+colorscheme zellner
 syntax on
 set modeline
 
@@ -91,7 +91,6 @@ nnoremap <C-y> 2<C-y>
 nnoremap <leader>n :set number!<cr>
 
 " C-u will uppercase a word
-nnoremap <C-u> viwU
 inoremap <C-u> <Esc>viwUea
 
 " Grep in vim
