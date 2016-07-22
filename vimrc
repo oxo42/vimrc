@@ -9,7 +9,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-fugitive'
 " Plugin 'altercation/vim-colors-solarized'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -17,6 +17,8 @@ Plugin 'yorokobi/vim-splunk'
 Plugin 'PProvost/vim-ps1'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'tfnico/vim-gradle'
+Plugin 'tmux-plugins/vim-tmux'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -31,6 +33,27 @@ else
     set background=dark
 endif
 
+"----------------
+" Status Line
+"----------------
+" status line symbols from ':help statusline'
+" %{N}* - User{N} colors setting, where N is 1..9
+" %< - collapse to left if window is too small
+" %F - full file path
+" %m - modified flag [+] (modified), [-] (unmodifiable)
+" %r - readonly flag [RO]
+" %h - help buffer g
+" %w - preview window
+" %b - value of byte under cursor
+" %B - as above, in hexadecimal
+" %l - line number
+" %c - column number
+" %V - virtual column number as -{num}
+" %p - percentage through file in lines
+" %= - separation point between left and right aligned items
+" %Y - type of file in the buffer
+" %L - number of lines in buffer
+set statusline=%f%m%r%h%w\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%l,%c%V]\ [%p%%]\ %=\ [FMT=%{&ff}]\ [ENC=%{&encoding}]\ [TYPE=%Y]\ [LEN=%L]
 
 " Looks
 set laststatus=2
@@ -57,6 +80,7 @@ set pastetoggle=<F2>    " when in insert mode, press <F2> to go to paste mode
                         " where mass data won't be auto indented
 set showmatch           " show matching paren when in insert mode
 set backspace=indent,eol,start  " Delete beyond the start of the insert point
+set nu
 
 " Search
 set hlsearch            " highlight search terms
@@ -78,10 +102,20 @@ noremap <C-t>l :tabnext<cr>
 noremap <C-t>L :tablast<cr>
 
 "split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
+
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
+set splitbelow
+set splitright
 
 " Speed up scrolling the viewporet
 nnoremap <C-e> 2<C-e>
