@@ -29,6 +29,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'phleet/vim-mercenary'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'nvie/vim-flake8'
+Plugin 'ctrlp.vim', {'pinned': 1}
+Plugin 'majutsushi/tagbar'
+Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -47,31 +51,9 @@ else
     set background=dark
 endif
 
-"----------------
-" Status Line
-"----------------
-" status line symbols from ':help statusline'
-" %{N}* - User{N} colors setting, where N is 1..9
-" %< - collapse to left if window is too small
-" %F - full file path
-" %m - modified flag [+] (modified), [-] (unmodifiable)
-" %r - readonly flag [RO]
-" %h - help buffer g
-" %w - preview window
-" %b - value of byte under cursor
-" %B - as above, in hexadecimal
-" %l - line number
-" %c - column number
-" %V - virtual column number as -{num}
-" %p - percentage through file in lines
-" %= - separation point between left and right aligned items
-" %Y - type of file in the buffer
-" %L - number of lines in buffer
-"" set statusline=%f%m%r%h%w\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%l,%c%V]\ [%p%%]\ %=\ [FMT=%{&ff}]\ [ENC=%{&encoding}]\ [TYPE=%Y]\ [LEN=%L]
-
 " Looks
 set laststatus=2
-set showtabline=1
+set showtabline=2
 set guioptions=-e
 "let g:solarized_termtrans = 1
 colorscheme dark-ruby
@@ -79,7 +61,7 @@ syntax on
 set modeline
 
 " Editting Behaviour {{{
-set showmode            " always show what mode we're currently editing in
+set noshowmode          " always show what mode we're currently editing in
 set autoindent          " always set autoindenting on
 set copyindent          " copy the previous indentation on autoindenting
 set tabstop=4           " a tab is four spaces
@@ -95,6 +77,7 @@ set pastetoggle=<F2>    " when in insert mode, press <F2> to go to paste mode
 set showmatch           " show matching paren when in insert mode
 set backspace=indent,eol,start  " Delete beyond the start of the insert point
 set number
+set scrolloff=3
 
 " Better completion of the : prompt
 set wildmenu
@@ -227,11 +210,20 @@ endif
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""
 
+" Flake8
+let g:flake8_cmd="/usr/local/bin/flake8"
+autocmd FileType python autocmd BufWritePost <buffer> call Flake8()
+let g:flake8_show_in_gutter=1
+let g:flake8_show_in_file=0
+
 " Airline - User powerline glyphs
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
 
 " NERDTree - Toggle buffer.
 nnoremap <leader><Space> :NERDTreeToggle<CR><C-w>=
+map <leader>r :NERDTreeFind<cr>
 
 " NERDTree - Quit vim when all other windows have been closed.
 au BufEnter *
@@ -244,9 +236,21 @@ au BufEnter *
 nnoremap <leader>hb :HGblame<CR>
 nnoremap <leader>hd :HGdiff<CR>
 
+" Tagbar
+nnoremap <leader>t :TagbarToggle<CR>
+
+" indentline
+" Vim
+let g:indentLine_color_term = 239
+let g:indentLine_char = '┆'
+
 """"""""""""""""""""""""""""""""""""""""""
 " Miscellaneous
 """"""""""""""""""""""""""""""""""""""""""
+
+" Make tabs show up in red
+syn match tab display "\t"
+hi link tab Error
 
 " Set language defaults.
 let g:tex_flavor='latex'
@@ -259,7 +263,7 @@ fu! <SID>StripTrailingWhitespaces()
   %s/\s\+$//e
   call cursor(l, c)
 endfu
-au FileType c,cabal,cpp,haskell,javascript,ocaml,php,python,ruby,readme,tex,text
+au FileType c,cabal,cpp,haskell,javascript,ocaml,php,python,ruby,readme,tex,text,vim
   \ au BufWritePre <buffer>
   \ :call <SID>StripTrailingWhitespaces()
 
