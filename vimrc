@@ -3,7 +3,7 @@ if filereadable($HOME."/.vimrc.before")
   source $HOME/.vimrc.before
 endif
 
-" Vundle requirements
+" Vundle {{{
 set nocompatible
 filetype off
 
@@ -14,33 +14,32 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" Plugin 'tpope/vim-fugitive'
-" Plugin 'altercation/vim-colors-solarized'
+" Plugin 'phleet/vim-mercenary'
+
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'yorokobi/vim-splunk'
 Plugin 'PProvost/vim-ps1'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'tfnico/vim-gradle'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
-Plugin 'phleet/vim-mercenary'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nvie/vim-flake8'
 Plugin 'ctrlp.vim', {'pinned': 1}
 Plugin 'majutsushi/tagbar'
 Plugin 'Yggdroot/indentLine'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
+filetype plugin indent on
+"  }}}
 
-
-let g:fb_default_opts = 0
-source $LOCAL_ADMIN_SCRIPTS/master.vimrc
 
 let mapleader=","
 let maplocalleader="\\"
@@ -55,7 +54,6 @@ endif
 set laststatus=2
 set showtabline=2
 set guioptions=-e
-"let g:solarized_termtrans = 1
 colorscheme dark-ruby
 syntax on
 set modeline
@@ -73,11 +71,11 @@ set expandtab           " expand tabs by default
 set nolist              " don't show invisible characters by default
 set listchars=tab:>-
 set pastetoggle=<F2>    " when in insert mode, press <F2> to go to paste mode
-                        " where mass data won't be auto indented
 set showmatch           " show matching paren when in insert mode
 set backspace=indent,eol,start  " Delete beyond the start of the insert point
 set number
 set scrolloff=3
+" }}}
 
 " Better completion of the : prompt
 set wildmenu
@@ -168,7 +166,7 @@ set title                       " change the terminal's title
 set visualbell                  " don't beep
 set noerrorbells                " don't beep
 set showcmd                     " show (partial) command in the last line of the screen
-                                "    this also shows visual selection info
+set foldlevel=99
 " }}}
 
 let g:vim_markdown_folding_disabled = 1
@@ -210,6 +208,10 @@ endif
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""
 
+" SimpylFold
+let g:SimpylFold_docstring_preview = 1
+
+
 " Flake8
 let g:flake8_cmd="/usr/local/bin/flake8"
 autocmd FileType python autocmd BufWritePost <buffer> call Flake8()
@@ -240,9 +242,14 @@ nnoremap <leader>hd :HGdiff<CR>
 nnoremap <leader>t :TagbarToggle<CR>
 
 " indentline
-" Vim
 let g:indentLine_color_term = 239
 let g:indentLine_char = '┆'
+
+" syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 """"""""""""""""""""""""""""""""""""""""""
 " Miscellaneous
