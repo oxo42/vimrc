@@ -33,7 +33,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -54,7 +54,11 @@ endif
 set laststatus=2
 set showtabline=2
 set guioptions=-e
-colorscheme dark-ruby
+if has("win32")
+    colorscheme default
+else
+    colorscheme dark-ruby
+endif
 syntax on
 set modeline
 
@@ -243,7 +247,11 @@ nnoremap <leader>t :TagbarToggle<CR>
 
 " indentline
 let g:indentLine_color_term = 239
-let g:indentLine_char = '┆'
+if has("win32")
+    let g:indentLine_char = '|'
+else
+    let g:indentLine_char = '┆'
+endif
 
 " syntastic
 let g:syntastic_always_populate_loc_list = 1
