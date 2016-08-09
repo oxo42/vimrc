@@ -56,10 +56,10 @@ set showtabline=2
 set guioptions=-e
 
 " ConEmu
-if &term == "xterm-256color"
-    colorscheme dark-ruby
-else
+if $ConEmuANSI == "ON"
     colorscheme default
+else
+    colorscheme dark-ruby
 endif
 
 syntax on
