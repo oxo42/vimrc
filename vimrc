@@ -34,6 +34,7 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 " Plugin 'Valloric/YouCompleteMe'
+Plugin 'mxw/vim-hg'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
