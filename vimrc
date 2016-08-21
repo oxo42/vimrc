@@ -35,6 +35,8 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'mxw/vim-hg'
+Plugin 'hhvm/vim-hack'
+Plugin 'jlanzarotta/bufexplorer'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -145,29 +147,29 @@ set splitbelow        " vsplit to the left
 set laststatus=2      " always show a status line
 
 " For tabs :)
-noremap <C-t>h :tabprevious<cr>
-noremap <C-t>H :tabrewind<cr>
-noremap <C-t>l :tabnext<cr>
-noremap <C-t>L :tablast<cr>
+noremap <C-t>h :tabprevious<CR>
+noremap <C-t>H :tabrewind<CR>
+noremap <C-t>l :tabnext<CR>
+noremap <C-t>L :tablast<CR>
 
 "split navigations
 let g:tmux_navigator_no_mappings=1
 
-nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
+nnoremap <silent> <C-h> :TmuxNavigateLeft<CR>
+nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
+nnoremap <silent> <C-k> :TmuxNavigateUp<CR>
+nnoremap <silent> <C-l> :TmuxNavigateRight<CR>
+nnoremap <silent> <C-\> :TmuxNavigatePrevious<CR>
 
 " Speed up scrolling the viewporet
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
 
 " toggle line number
-nnoremap <leader>n :set number!<cr>
+nnoremap <leader>n :set number!<CR>
 
 " Grep in vim
-nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
+nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<CR>:copen<cr>
 " }}}
 
 " Vim behaviour {{{
@@ -246,7 +248,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 " NERDTree - Toggle buffer.
 nnoremap <leader><Space> :NERDTreeToggle<CR><C-w>=
-map <leader>r :NERDTreeFind<cr>
+map <leader>r :NERDTreeFind<CR>
 
 " NERDTree - Quit vim when all other windows have been closed.
 au BufEnter *
@@ -275,6 +277,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" BufExplorer
+nnoremap <leader>b :BufExplorerVerticalSplit<CR>
 
 """"""""""""""""""""""""""""""""""""""""""
 " Miscellaneous
