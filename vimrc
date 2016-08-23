@@ -22,7 +22,7 @@ Plugin 'PProvost/vim-ps1'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nvie/vim-flake8'
@@ -31,12 +31,16 @@ Plugin 'majutsushi/tagbar'
 Plugin 'Yggdroot/indentLine'
 " Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-vinegar'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'mxw/vim-hg'
 Plugin 'hhvm/vim-hack'
 Plugin 'jlanzarotta/bufexplorer'
+Plugin 'tomtom/tcomment_vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -303,6 +307,15 @@ endfu
 au FileType c,cabal,cpp,haskell,javascript,ocaml,php,python,ruby,readme,tex,text,vim
   \ au BufWritePre <buffer>
   \ :call <SID>StripTrailingWhitespaces()
+
+nnoremap <leader>w :%s/\s\+$//e<CR>
+
+" Source the vimrc file after saving it
+if has("autocmd")
+  autocmd bufwritepost vimrc source $MYVIMRC
+endif
+
+nmap <leader>v :tabedit $MYVIMRC<CR>
 
 """"""""""""""""""""""""""""""""""""""""""
 " Epilogue
