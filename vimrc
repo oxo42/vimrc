@@ -16,27 +16,25 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Plugin 'phleet/vim-mercenary'
 
+Plugin 'L9'
+Plugin 'FuzzyFinder'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'PProvost/vim-ps1'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'flazz/vim-colorschemes'
-" Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nvie/vim-flake8'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'Yggdroot/indentLine'
-" Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-vinegar'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-" Plugin 'Valloric/YouCompleteMe'
 Plugin 'mxw/vim-hg'
 Plugin 'hhvm/vim-hack'
 Plugin 'jlanzarotta/bufexplorer'
@@ -103,11 +101,11 @@ set wildignore+=*.o,*.pyc,*.aux,*.cmi,*.cmo,*.cmx
 
 " http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
 set completeopt=longest,menuone
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+" inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+"   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+" inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+"   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 " Highlight trailing whitespace.
 hi ExtraWhitespace ctermbg=red guibg=red
@@ -284,6 +282,19 @@ let g:syntastic_check_on_wq = 0
 
 " BufExplorer
 nnoremap <leader>b :BufExplorerVerticalSplit<CR>
+
+" FuzzyFinder
+nmap <silent> <unique> <SPACE>o :FufBuffer<CR>
+nmap <silent> <unique> <SPACE>f :FufFile<CR>
+nmap <silent> <unique> <SPACE>d :FufDir<CR>
+nmap <silent> <unique> <SPACE>cl :FufChangeList<CR>
+nmap <silent> <unique> <SPACE>b :FufBookmarkDir<CR>
+nmap <silent> <unique> <SPACE>a :FufBookmarkDirAdd<CR>
+nmap <silent> <unique> <SPACE>t :FufTag<CR>
+nmap <silent> <unique> <SPACE><TAB> :FufCoverageFile<CR>
+nmap <silent> <unique> <SPACE>e :FufMruFile<CR>
+nmap <silent> <unique> <SPACE>c :FufMruCmd<CR>
+
 
 """"""""""""""""""""""""""""""""""""""""""
 " Miscellaneous
