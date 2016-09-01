@@ -39,6 +39,7 @@ Plugin 'mxw/vim-hg'
 Plugin 'hhvm/vim-hack'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'easymotion/vim-easymotion'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -250,15 +251,15 @@ let g:airline#extensions#tabline#enabled = 1
 
 
 " NERDTree - Toggle buffer.
-nnoremap <leader><Space> :NERDTreeToggle<CR><C-w>=
-map <leader>r :NERDTreeFind<CR>
+"nnoremap <leader><Space> :NERDTreeToggle<CR><C-w>=
+"nnoremap <leader>r :NERDTreeFind<CR>
 
 " NERDTree - Quit vim when all other windows have been closed.
-au BufEnter *
-  \ if (winnr("$") == 1 && exists("b:NERDTreeType") &&
-  \ b:NERDTreeType == "primary") |
-  \   q |
-  \ endif
+" au BufEnter *
+"   \ if (winnr("$") == 1 && exists("b:NERDTreeType") &&
+"   \ b:NERDTreeType == "primary") |
+"   \   q |
+"   \ endif
 
 " Mercenary - Leader mappings.
 nnoremap <leader>hb :HGblame<CR>
@@ -285,16 +286,16 @@ let g:syntastic_check_on_wq = 0
 nnoremap <leader>b :BufExplorerVerticalSplit<CR>
 
 " FuzzyFinder
-nmap <silent> <unique> <SPACE>o :FufBuffer<CR>
-nmap <silent> <unique> <SPACE>f :FufFile<CR>
-nmap <silent> <unique> <SPACE>d :FufDir<CR>
-nmap <silent> <unique> <SPACE>cl :FufChangeList<CR>
-nmap <silent> <unique> <SPACE>b :FufBookmarkDir<CR>
-nmap <silent> <unique> <SPACE>a :FufBookmarkDirAdd<CR>
-nmap <silent> <unique> <SPACE>t :FufTag<CR>
-nmap <silent> <unique> <SPACE><TAB> :FufCoverageFile<CR>
-nmap <silent> <unique> <SPACE>e :FufMruFile<CR>
-nmap <silent> <unique> <SPACE>c :FufMruCmd<CR>
+nnoremap <silent> <unique> <SPACE>o :FufBuffer<CR>
+nnoremap <silent> <unique> <SPACE>f :FufFile<CR>
+nnoremap <silent> <unique> <SPACE>d :FufDir<CR>
+nnoremap <silent> <unique> <SPACE>cl :FufChangeList<CR>
+nnoremap <silent> <unique> <SPACE>b :FufBookmarkDir<CR>
+nnoremap <silent> <unique> <SPACE>a :FufBookmarkDirAdd<CR>
+nnoremap <silent> <unique> <SPACE>t :FufTag<CR>
+nnoremap <silent> <unique> <SPACE><TAB> :FufCoverageFile<CR>
+nnoremap <silent> <unique> <SPACE>e :FufMruFile<CR>
+nnoremap <silent> <unique> <SPACE>c :FufMruCmd<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""
