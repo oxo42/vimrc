@@ -91,6 +91,7 @@ set pastetoggle=<F2>    " when in insert mode, press <F2> to go to paste mode
 set showmatch           " show matching paren when in insert mode
 set backspace=indent,eol,start  " Delete beyond the start of the insert point
 set number
+set relativenumber
 set scrolloff=3
 " }}}
 
