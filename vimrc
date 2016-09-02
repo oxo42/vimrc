@@ -40,6 +40,7 @@ Plugin 'hhvm/vim-hack'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'hashivim/vim-vagrant'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
