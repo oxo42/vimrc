@@ -42,6 +42,7 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'hashivim/vim-vagrant'
+Plugin 'elzr/vim-json'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -300,6 +301,10 @@ nnoremap <silent> <unique> <SPACE>t :FufTag<CR>
 nnoremap <silent> <unique> <SPACE><TAB> :FufCoverageFile<CR>
 nnoremap <silent> <unique> <SPACE>e :FufMruFile<CR>
 nnoremap <silent> <unique> <SPACE>c :FufMruCmd<CR>
+
+
+" vim json plugin
+let g:vim_json_syntax_conceal = 0
 
 
 """"""""""""""""""""""""""""""""""""""""""
