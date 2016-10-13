@@ -1,5 +1,5 @@
 " Vim filetype plugin
-" Language:     PowerShell
+" Language:     sh
 
 set tabstop=2
 set shiftwidth=2
