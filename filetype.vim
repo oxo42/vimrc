@@ -5,3 +5,4 @@ au BufRead,BufNewFile *.expect if &ft == '' | setfiletype expect | endif
 au BufRead,BufNewFile Jenkinsfile if &ft == '' | setfiletype groovy | endif
 au BufRead,BufNewFile TARGETS,*.cconf,*.cinc if &ft == '' | setfiletype python | endif
 au BufRead,BufNewFile .arcconfig,*.materialized_JSON if &ft == '' | setfiletype javascript | endif
+au BufRead,BufNewFile *.tw if &ft == '' | set filetype=python | endif
