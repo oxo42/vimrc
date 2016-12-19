@@ -131,6 +131,7 @@ set mouse=a             " enable mouse if term emulator allows it
 
 " General
 nnoremap <leader>e :e!<CR>
+nnoremap <leader>x :!chmod 755 %<CR>
 nnoremap Y y$
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
