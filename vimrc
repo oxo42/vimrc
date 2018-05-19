@@ -25,7 +25,6 @@ Plugin 'tmux-plugins/vim-tmux'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'nvie/vim-flake8'
 Plugin 'majutsushi/tagbar'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tpope/vim-dispatch'
@@ -245,12 +244,6 @@ endif
 " SimpylFold
 let g:SimpylFold_docstring_preview = 1
 
-
-" Flake8
-let g:flake8_cmd="/usr/local/bin/flake8"
-autocmd FileType python autocmd BufWritePost <buffer> call Flake8()
-let g:flake8_show_in_gutter=1
-let g:flake8_show_in_file=0
 
 " Airline - User powerline glyphs
 let g:airline_powerline_fonts = 1
