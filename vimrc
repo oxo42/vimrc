@@ -66,7 +66,7 @@ set guioptions=-e
 
 augroup vimrc_autocmds
   autocmd BufEnter * highlight ColorColumn ctermbg=235
-  autocmd BufEnter * let &colorcolumn=join(range(81,999),",")
+  autocmd BufEnter * let &colorcolumn=join(range(89,999),",")
 augroup END
 
 " ConEmu
