@@ -43,6 +43,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'hashivim/vim-vagrant'
 Plugin 'elzr/vim-json'
 Plugin 'luochen1990/rainbow'
+Plugin 'vito-c/jq.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
