@@ -44,6 +44,7 @@ Plugin 'hashivim/vim-vagrant'
 Plugin 'elzr/vim-json'
 Plugin 'luochen1990/rainbow'
 Plugin 'vito-c/jq.vim'
+Plugin 'dag/vim-fish'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
