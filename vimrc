@@ -76,7 +76,7 @@ if $ConEmuANSI == "ON"
     colorscheme default
 else
     "colorscheme dark-ruby
-    colorscheme wombat256
+    "colorscheme wombat256
 endif
 
 syntax on
