@@ -33,10 +33,7 @@ Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-surround'
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'vim-scripts/indentpython.vim'
 Plugin 'heavenshell/vim-pydocstring'
-Plugin 'mxw/vim-hg'
-Plugin 'hhvm/vim-hack'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'easymotion/vim-easymotion'
@@ -44,7 +41,6 @@ Plugin 'hashivim/vim-vagrant'
 Plugin 'elzr/vim-json'
 Plugin 'luochen1990/rainbow'
 Plugin 'vito-c/jq.vim'
-Plugin 'dag/vim-fish'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
