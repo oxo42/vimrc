@@ -34,7 +34,6 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-surround'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'heavenshell/vim-pydocstring'
-Plugin 'jlanzarotta/bufexplorer'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'hashivim/vim-vagrant'
@@ -129,6 +128,7 @@ set mouse=a             " enable mouse if term emulator allows it
 " General
 nnoremap <leader>e :e!<CR>
 nnoremap <leader>x :!chmod 755 %<CR>
+nnoremap <leader>b :!black %<CR>
 nnoremap Y y$
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
@@ -280,7 +280,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " BufExplorer
-nnoremap <leader>b :BufExplorerVerticalSplit<CR>
+" nnoremap <leader>b :BufExplorerVerticalSplit<CR>
 
 " FuzzyFinder
 nnoremap <silent> <unique> <SPACE>o :FufBuffer<CR>
